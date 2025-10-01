@@ -25,12 +25,25 @@
 समाप्ति।
 ```
 
+### पुनरावर्तन-उदाहरणः (फैक्टोरियल)
+`src/उदाहरण/फैक्टोरियल.सं`
+```
+कार्य फल(न: पूर्ण): पूर्ण आरम्भ
+  यदि न सम ० तदा
+    निवर्तय १।
+  अन्यथा
+    निवर्तय गुण(न, फल(घट न, १))।
+समाप्ति
+```
+
 ## संचिका-विन्यासः
 ```
 src/कण्ठि/शब्दविभाजक.सं   ← टोकनाइज़र (देवनागरी-अङ्क, दण्ड, शब्द-ऑपरेटराः)
 src/कण्ठि/वाक्यविच्छेदक.सं ← पार्सर-कंकाल
 src/निर्गम/लेख_उत्पादक.सं  ← बाइटकोड-उत्पादकः (लिख/स्थापय/सूचि/मानचित्र/लूप्)
 src/यन्त्रमुख/व्याख्याता.सं ← व्याख्याता-कंकाल
+src/उदाहरण/प्रथम.सं        ← नमस्ते
+src/उदाहरण/फैक्टोरियल.सं   ← पुनरावर्तन-उदाहरणः
 ```
 
 ## उपयोग-निर्देशाः
@@ -66,7 +79,8 @@ src/यन्त्रमुख/व्याख्याता.सं ← व्
 - `src/कण्ठि/वाक्यविच्छेदक.सं` — parser skeleton
 - `src/निर्गम/लेख_उत्पादक.सं` — bytecode generator (print/assign/list/map/loop)
 - `src/यन्त्रमुख/व्याख्याता.सं` — interpreter skeleton
-- `docs/उपयोग.md` — usage guide (bilingual)
+- `src/उदाहरण/प्रथम.सं` — “hello”
+- `src/उदाहरण/फैक्टोरियल.सं` — recursion example
 
 ## Contributing (योगदानम्)
 We welcome contributions in both Sanskrit and English.
@@ -91,4 +105,4 @@ Guidelines:
 
 ## Community & License
 - Open source for everyone; respectful collaboration is expected.
-- License: MIT (unless overridden in repo settings).
+- License: AGPL-3.0-or-later.
