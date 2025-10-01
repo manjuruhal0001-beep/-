@@ -41,3 +41,54 @@ src/यन्त्रमुख/व्याख्याता.सं ← व्
 
 ## अनुज्ञा
 - परियोजना आरम्भिक-अवस्थायाम् अस्ति; अनुज्ञा-पत्रं शीघ्रं दास्यते।
+
+---
+
+## English Overview
+- Script: Devanagari only for source; UTF‑8 NFC enforced.
+- Numerals: Devanagari digits ०–९ (decimal only in v0.1).
+- Statement terminator: danda `।`.
+- Assignment: `स्थापय <name>, <value>`.
+- Operators (word form): `योग/घट/गुण/भाग/सम/असम/लघु/महान्/लघु-सम/महान्-सम/च/वा/न`.
+- Blocks: `आरम्भ … समाप्ति` (braces `{}` also accepted for now).
+- Canonicalization: dual storage (surface + canonical), NFC + whitespace + punctuation normalization.
+
+### Quick Example
+```
+कार्य मुख्य() आरम्भ
+  स्थापय अ, ५। स्थापय ब, ७।
+  यदि अ लघु ब तदा लिख("लघु") अन्यथा लिख("बृहत्")।
+समाप्ति।
+```
+
+### Project Layout (high level)
+- `src/कण्ठि/शब्दविभाजक.सं` — lexer (Devanagari digits, danda, word-operators)
+- `src/कण्ठि/वाक्यविच्छेदक.सं` — parser skeleton
+- `src/निर्गम/लेख_उत्पादक.सं` — bytecode generator (print/assign/list/map/loop)
+- `src/यन्त्रमुख/व्याख्याता.सं` — interpreter skeleton
+- `docs/उपयोग.md` — usage guide (bilingual)
+
+## Contributing (योगदानम्)
+We welcome contributions in both Sanskrit and English.
+
+1) Fork the repo and create a feature branch:
+```bash
+git checkout -b feature/<your-change>
+```
+2) Make edits with Sanskrit source; add bilingual docs when possible.
+3) Commit with clear messages (Sanskrit or English):
+```bash
+git commit -m "Add: आरम्भ/समाप्ति block parsing (Sanskrit-only lexer)"
+```
+4) Push your branch and open a Pull Request against `main`.
+```bash
+git push origin feature/<your-change>
+```
+Guidelines:
+- Keep source in Devanagari; docs may be bilingual.
+- Preserve Phase 0 rules (danda terminators, word-operators, Devanagari digits).
+- Add tests or examples if you change lexer/parser rules.
+
+## Community & License
+- Open source for everyone; respectful collaboration is expected.
+- License: MIT (unless overridden in repo settings).
